@@ -1,0 +1,10 @@
+@use "../../scss/" as *;
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: $main-color;
+  @include mobile {
+    margin-bottom: 5em;
+  }
+}

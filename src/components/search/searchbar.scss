@@ -1,0 +1,80 @@
+@use "../../scss/" as *;
+
+.searchInputs {
+  display: flex;
+  width: 100%;
+}
+
+.inpt-search {
+  border: 0;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  background-color: $white;
+  font-family: $font-family;
+  border-radius: $border-radius;
+
+  height: 2em;
+  width: 90%;
+}
+
+.searchIcon {
+  height: 30px;
+  width: 50px;
+  background-color: $white;
+  display: grid;
+  place-items: center;
+}
+
+.searchIcon svg {
+  font-size: 25px;
+  color: black;
+}
+
+.dataResult {
+  padding: 0.5em;
+  margin-top: 5px;
+  border-radius: 8px;
+  width: 82%;
+  height: 80%;
+  background-color: white;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 99;
+  position: absolute;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataItem {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  color: black;
+  padding: 5px;
+  margin-top: 0.5em;
+  @include tablet {
+    height: 70px;
+  }
+}
+
+.imgResult {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  @include tablet {
+    width: 50px;
+    height: 60px;
+  }
+}
+
+.dataItem p {
+  margin-left: 10px;
+}
+
+#clearBtn {
+  cursor: pointer;
+}

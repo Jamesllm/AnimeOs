@@ -1,0 +1,180 @@
+@use "../../scss/" as *;
+
+.banner {
+  height: 55vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+
+.movie-content {
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    .title {
+      font-size: 3rem;
+      line-height: 1;
+    }
+
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+      }
+
+      &__item {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+///video active
+.list_video_tab {
+  height: 18em;
+  padding: 0em 1em;
+  overflow-x: scroll;
+  margin-top: 2em;
+}
+.tablet-list {
+  text-align: center;
+  border-radius: 5px;
+  outline: 2px solid $main-color;
+  cursor: pointer;
+  padding: 1px;
+  margin-bottom: 0.6em;
+}
+
+#mas {
+  display: none;
+}
+
+.icon {
+  font-size: 2em;
+  color: $white;
+}
+
+.container_ep {
+  width: 100%;
+  height: 3rem;
+  background: $main-color;
+  &_content {
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_button_list {
+      border: 0;
+      background: none;
+    }
+
+    &_link_src {
+      padding: 1em;
+      width: 15em;
+      height: 12em;
+      overflow-x: scroll;
+      background: rgba(110, 110, 110, 0.452);
+      box-shadow: $box-shadow;
+      top: 0;
+      transform: translate(0px, -8em);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  }
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
+  @media (min-width: $pc-width) {
+    display: block;
+  }
+}
+
+#tablet {
+  @media (max-width: $tablet-width) {
+    display: block;
+  }
+  @media (min-width: $pc-width) {
+    display: none;
+  }
+}
+
+
+.link_src {
+  text-align: center;
+  cursor: pointer;
+  padding: 0.3em;
+}
+.episode_active {
+  background: $list-color;
+  color: #fff;
+}
+
+.interes-content {
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+}
