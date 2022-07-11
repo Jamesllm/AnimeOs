@@ -9,7 +9,7 @@ import { faReact, faFontAwesome } from "@fortawesome/free-brands-svg-icons";
 import Loading from "./components/loading/Loading";
 //Rutas
 import Rutas from "./pages/Rutas";
-import { DB_ANIME_OS } from "https://dl.dropbox.com/s/qg4c0moqiz01avm/2022-06-22%20-%20Data.mjs?dl=0";
+import { DB_ANIME_OS } from "https://dl.dropbox.com/s/qg4c0moqiz01avm/data.mjs?dl=0";
 console.log(DB_ANIME_OS);
 
 library.add(fas, faReact, faFontAwesome);
